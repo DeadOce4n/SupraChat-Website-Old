@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "Manrope";
+    font-weight: 200;
+    src: url(../fonts/Manrope-ExtraLight.otf)
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: 300;
+    src: url(../fonts/Manrope-Light.otf)
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: 400;
+    src: url(../fonts/Manrope-Regular.otf)
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: 500;
+    src: url(../fonts/Manrope-Medium.otf)
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: 600;
+    src: url(../fonts/Manrope-SemiBold.otf)
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: 700;
+    src: url(../fonts/Manrope-Bold.otf)
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: 800;
+    src: url(../fonts/Manrope-ExtraBold.otf)
+}
+
+@font-face {
+    font-family: "Bitter";
+    src: url(../fonts/Bitter-VariableFont_wght.ttf)
+}
+
+@font-face {
+    font-family: "Bitter";
+    font-style: italic;
+    src: url(../fonts/Bitter-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Lemon Juice";
+    src: url(../fonts/lemon-juice.otf)
+}
