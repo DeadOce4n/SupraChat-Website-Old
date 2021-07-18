@@ -71,11 +71,17 @@ button {
     font-style: italic;
     text-align: center;
     display: inline-block;
+    cursor: pointer;
 }
 
 button:hover {
     color: var(--link-hover);
     border-color: var(--link-hover);
+}
+
+button:active {
+    color: var(--foreground);
+    border-color: var(--foreground);
 }
 
 button#chat-now {
@@ -147,4 +153,21 @@ figure.image>img {
 .footer {
     padding: 1rem 4rem;
     text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    article .left { grid-column: 2 / 4; padding-top: 3rem; }
+    article .right { grid-column: 2 / 4; }
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+
 }
