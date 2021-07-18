@@ -1,0 +1,7 @@
+:root {
+    --background: rgb(53, 255, 105);
+    --foreground: rgb(49, 49, 47);
+    --link: rgb(217, 3, 104);
+    --link-hover: rgb(255, 0, 127);
+    --ruler: rgba(217, 3, 104, 0.2);
+}
