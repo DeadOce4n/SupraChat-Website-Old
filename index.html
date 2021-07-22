@@ -3,48 +3,61 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://unpkg.com/browse/normalize.css@8.0.1/normalize.css">
+        <link rel="stylesheet" href="https://pagecdn.io/lib/normalize/8.0.1/normalize.min.css">
         <link rel="stylesheet" href="css/styles.css">
-        <title>VicioChat: Nuestro vicio es chatear 💬</title>
+        <link rel="stylesheet" href="icofont/icofont.min.css">
+        <title>VicioChat</title>
     </head>
-    <body>
+    <body class="bg-light">
         <header>
-            <nav class="nav">
-                <span class="logo" id="nav-logo">VicioChat</span>
-                <ul>
-                    <li><a href="/chat">Chatea ya!</a></li>
-                    <li><a href="/manual">Manual de usuario</a></li>
-                    <li><a href="/unete">Únete al equipo</a></li>
-                    <li><a href="/acerca">Acerca de VicioChat</a></li>
-                </ul>
-            </nav>
-            <hr>
+            <div class="container">
+                <nav>
+                    <div class="nav-start">
+                        <span class="nav-logo"><a href="/">VicioChat</a></span>
+                        <button id="burger-menu" data-target="nav-menu"><span class="icofont-navigation-menu"></span></button>
+                    </div>
+                    <div class="nav-menu" id="nav-menu">
+                        <ul>
+                            <li><a href="/manual">Manual de usuario</a></li>
+                            <li><a href="/unete">Únete al equipo</a></li>
+                            <li><a href="/acerca">Acerca de VicioChat</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-end">
+                        <button type="button" id="nav-button" onclick="window.location.href='/chat'">Chatea ya!</button>
+                    </div>
+                </nav>
+            </div>
         </header>
-        <article>
-            <section class="left">
-                <div class="main">
-                    <span id="title">El mejor chat de la web</span>
-                    <p>
-                        Totalmente gratis. Para siempre.
-                    </p>
-                    <button type="button" id="chat-now" onclick="window.location.href='/chat'">Chatea ya!</button>
+        <section>
+            <div class="container">
+                <div class="split">
+                    <div class="hero">
+                        <h1>El mejor chat de la web</h1>
+                        <p>Totalmente gratis. Para siempre.</p>
+                        <button type="button" id="chat-now" onclick="window.location.href='/chat'">Chatea ya!</button>
+                    </div>
+                    <div>
+                        <img src="img/background.png" alt="Estatua chateando." title="VicioChat" />
+                    </div>
                 </div>
-            </section>
-            <figure class="right image"><img src="img/background.png" alt="Estatua chateando." title="VicioChat" /></figure>
-        </article>
+            </div>
+        </section>
+        <footer>
+            <div class="container footer">
+                <strong>&copy; VicioChat</strong>
+                <p>Esta página fue creada con <span class="icofont-heart"></span> por DeadOcean.</p>
+            </div>
+        </footer>
     </body>
-    <footer>
-        <hr>
-        <p class="footer">
-            <strong>VicioChat</strong>
-            <br>
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-                <img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-            </a>
-            <br />
-            Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-                Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional
-            </a>.
-        </p>
-    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burgerMenu = document.getElementById("burger-menu");
+            burgerMenu.addEventListener("click", () => {
+                const target = document.getElementById(burgerMenu.dataset.target);
+                target.classList.toggle("is-active");
+                burgerMenu.classList.toggle("is-active");
+            })
+        })
+    </script>
 </html>
