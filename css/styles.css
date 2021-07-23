@@ -201,15 +201,19 @@ nav {
     }
     .nav-start + .nav-menu { margin-left: 2em; }
     .nav-menu {
-        justify-self: flex-start;
         display: flex;
         width: auto;
     }
+    .nav-menu a:hover, .nav-end a:hover {
+        background-color: unset;
+    }
+
     #burger-menu { display: none; }
     .nav-menu > ul {
         flex-direction: row;
         justify-content: space-around;
     }
+    .nav-menu li { width: auto; }
     .nav-end {
         margin-left: auto;
         display: inline;
