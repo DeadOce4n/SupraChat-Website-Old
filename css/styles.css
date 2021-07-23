@@ -82,6 +82,10 @@ button#nav-button {
 button#burger-menu {
     border: 0 none transparent;
 }
+button#burger-menu:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+}
 
 img {
     display: block;
@@ -119,6 +123,7 @@ nav {
 
 .nav-menu {
     display: none;
+    width: 100%;
 }
 
 .is-active { display: inline; }
@@ -137,11 +142,16 @@ nav {
 .nav-menu li {
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 .nav-menu a, .nav-end a {
     display: block;
     padding: 0.5em;
+}
+
+.nav-menu a:hover, .nav-end a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .container {
@@ -189,9 +199,11 @@ nav {
         align-items: center;
         width: auto;
     }
+    .nav-start + .nav-menu { margin-left: 2em; }
     .nav-menu {
         justify-self: flex-start;
         display: flex;
+        width: auto;
     }
     #burger-menu { display: none; }
     .nav-menu > ul {
@@ -221,8 +233,6 @@ nav {
 .nav-logo {
     font: 700 6rem "Lemon Juice";
 }
-
-.nav-start + .nav-menu { margin-left: 2em; }
 
 .bg-light { background-color: var(--clr-bg-light); }
 .bg-dark { background-color: var(--clr-bg-light); }
