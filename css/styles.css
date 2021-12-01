@@ -1,12 +1,13 @@
 @import "fonts.css";
+@import "colors.css";
+@import "app.css";
 
 :root {
-    --clr-bg-light: rgb(53, 255, 105);
-    --clr-fg-light: rgb(49, 49, 47);
-    --clr-accent-light: rgb(217, 3, 104);
-    --clr-accent-dark: rgb(255, 0, 127);
     --ff-primary: "Manrope", sans-serif;
-    --ff-accent: "Bitter", serif;
+    --ff-accent: "Poppins", sans-serif;
+    --ff-hero: "Poppins", sans-serif;
+    --ff-logo: "BabaPro", sans-serif;
+    --ff-code: "IBM Plex Mono", monospace;
     font-size: 8px;
 }
 
@@ -15,25 +16,40 @@
     box-sizing: border-box;
 }
 
-header { margin-top: 4rem; }
-
 body {
     font-family: var(--ff-primary);
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.6;
     color: var(--clr-fg-light);
+    background: var(--clr-bg-dark);
+    background: -moz-linear-gradient(135deg, var(--clr-bg-light) 0%, var(--clr-bg-dark) 100%);
+    background: -webkit-linear-gradient(135deg, var(--clr-bg-light) 0%, var(--clr-bg-dark) 100%);
+    background: linear-gradient(135deg, var(--clr-bg-light) 0%, var(--clr-bg-dark) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#001233",endColorstr="#000814",GradientType=1);
 }
 
 body, h1, h2, h3, p {
     margin: 0;
 }
 
+p { padding: 0 0.5em 0 1em; }
+
 h1, h2, h3 {
+    color: var(--clr-accent-light);
     font-family: var(--ff-accent);
     font-weight: 700;
     line-height: 1;
     margin-bottom: 1em;
+}
+
+p + h2, p + h3 {
+    margin-top: 1.5em;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 p { margin-bottom: 1em; }
@@ -53,8 +69,8 @@ button {
     border: 3px solid var(--clr-accent-light);
     border-radius: 10px;
     padding: 0.5em 1em;
-    font: 700 2.5rem "Bitter";
-    font-style: italic;
+    font: 700 2.5rem "Poppins";
+    font-style: normal;
     text-align: center;
     display: inline-block;
     cursor: pointer;
@@ -71,7 +87,7 @@ button:active {
 }
 
 button#chat-now {
-    width: 100%;
+    width: 75%;
 }
 
 button#nav-button {
@@ -81,6 +97,8 @@ button#nav-button {
 
 button#burger-menu {
     border: 0 none transparent;
+    position: relative;
+    top: -4px;
 }
 button#burger-menu:hover {
     background-color: rgba(0, 0, 0, 0.1);
@@ -93,14 +111,12 @@ img {
 }
 
 section {
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 
-.footer {
-    font-size: 1.8rem;
-    line-height: 2;
-    text-align: center;
-    padding: 5rem;
+.nav-bar {
+    margin-inline: auto;
+    width: min(90%, 120rem);
 }
 
 nav {
@@ -108,9 +124,40 @@ nav {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 1em;
+    margin-top: 3rem;
     font: 700 2rem "Bitter";
     font-style: italic;
+}
+
+code {
+    font-family: "IBM Plex Mono";
+    font-size: 0.80em;
+    color: #03071e;
+    background-color: #ece4db;
+    padding: 2px 7px 3px;
+    margin: auto 3px;
+    border: 0px solid #ece4db;
+    border-radius: 7px;
+}
+
+pre {
+    background-color: #ece4db;
+    color: #03071e;
+    width: 100%;
+    padding: 0.3em 0.5em 0.7rem;
+    margin-bottom: 0.5em;
+    overflow: auto;
+    overflow-y: hidden;
+    border: 0px solid #ece4db;
+    border-radius: 7px;
+}
+
+pre code {
+    padding: 0;
+}
+
+.example + * {
+    margin-top: 1em;
 }
 
 .nav-start {
@@ -127,8 +174,7 @@ nav {
 }
 
 .is-active { display: inline; }
-
-.nav-end { display: none; }
+.nav-end.is-active { display: block; }
 
 .nav-menu > ul {
     list-style-type: none;
@@ -147,21 +193,59 @@ nav {
 
 .nav-menu a, .nav-end a {
     display: block;
-    padding: 0.5em;
+    padding: 0.8em;
+    color: var(--clr-fg-light);
 }
 
 .nav-menu a:hover, .nav-end a:hover {
+    color: var(--clr-accent-dark);
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav-end { display: none; }
+.nav-end > button { margin: 0 0 0.8em 0.8em; }
+
+.nav-logo {
+    font-family: "BabaPro";
+    font-weight: 700;
+    font-size: 4rem;
+    font-style: normal;
+    position: relative;
+    top: -2px;
 }
 
 .container {
     margin-inline: auto;
-    width: min(90%, 112.8rem);
+    width: min(90%, 100rem);
+}
+
+.container.chat, .container.hero { width: min(90%, 120rem); }
+
+.container > ul {
+    padding-left: 0.5em;
+}
+
+.container li {
+    margin-bottom: 1em;
+}
+
+ul.compact > li { margin-bottom: 0.3em; }
+
+.container li:last-child {
+    margin-bottom: 2em;
+}
+
+span.example {
+    margin-left: 1em;
+    font-size: 0.9em;
 }
 
 .split {
     display: flex;
     flex-direction: column;
+}
+.split > * + * {
+    margin: 5rem;
 }
 
 .hero {
@@ -169,29 +253,109 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1em;
+}
+.hero * {
+    text-align: center;
+    font-family: var(--ff-hero);
+}
+
+.hero-text {
+    padding: 2rem;
+    max-width: 50rem;
 }
 
 .hero h1 {
     font-size: 6.4rem;
-    font-weight: 600;
-    color: var(--clr-fg-light);
-    margin-bottom: 0.5em;
+    font-weight: 700;
+    color: var(--clr-accent-light);
 }
 
-.hero p {
-    font-weight: 200;
-    font-size: 3rem;
+.hero p { font-family: var(--ff-primary); }
+
+#chat { 
+    width: 100%;
+    height: 75rem;
 }
 
-@media (min-width: 50em) {
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.team-cards img {
+    max-width: 190px;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: var(--ff-accent);
+    width: 45rem;
+    font-weight: 400;
+    min-height: 400px;
+    padding: 1rem;
+    margin: 2rem;
+    border: 3px solid var(--clr-accent-light);
+    border-radius: 10px;
+}
+
+.team-card > .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    font-size: 1.8rem;
+    line-height: 2;
+    text-align: center;
+    padding: 5rem;
+}
+
+@media (min-width: 40em) {
+    .split {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .split > * {
+        flex-basis: 100%;
+    }
+    .split > * + * {
+        margin: 0;
+    }
+}
+
+@media (min-width: 60em) {
     :root { font-size: 10px; }
-    section { padding: 0; }
+    .split {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .split > * {
+        flex-basis: 100%;
+    }
+    .split > * + * {
+        margin: 0;
+    }
+    .nav-bar {
+        padding: 2rem;
+        margin-inline: auto;
+        width: 100%;
+    }
+    .nav-bar > hr { display: none; }
     nav {
         flex-direction: row;
-        justify-content: initial;
         align-items: center;
+        margin-top: 0;
     }
+    #burger-menu { display: none; }
     .nav-start {
         justify-self: flex-start;
         display: flex;
@@ -199,54 +363,32 @@ nav {
         align-items: center;
         width: auto;
     }
+    .nav-logo { padding-left: 1rem; }
     .nav-start + .nav-menu { margin-left: 2em; }
     .nav-menu {
         display: flex;
         width: auto;
     }
+    .nav-menu a { padding: 0 0.8em; }
     .nav-menu a:hover, .nav-end a:hover {
         background-color: unset;
     }
-
-    #burger-menu { display: none; }
     .nav-menu > ul {
         flex-direction: row;
         justify-content: space-around;
+        margin: 0;
     }
     .nav-menu li { width: auto; }
     .nav-end {
         margin-left: auto;
-        display: inline;
+        display: block;
     }
-    .split {
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
+    .nav-end > button { margin-left: 0; }
+    .container > ul {
+        padding-left: 40px;
     }
-    .split > * {
-        flex-basis: 100%;
+    .team-card {
+        width: 29rem;
     }
-    .split > * + * {
-        margin-left: 2em;
-    }
-    .hero {
-        padding: 1em 4em 2em;
-    }
+    #chat { height: 65rem; }
 }
-
-.nav-logo {
-    font: 700 6rem "Lemon Juice";
-}
-
-.bg-light { background-color: var(--clr-bg-light); }
-.bg-dark { background-color: var(--clr-bg-light); }
-
-.bg-light h1,
-.bg-light h2,
-.bg-light h3,
-.bg-light .nav-logo { color: var(--clr-accent-light); }
-
-.bg-dark h1,
-.bg-dark h2,
-.bg-dark h3,
-.bg-dark .nav-logo { color: var(--clr-accent-dark); }

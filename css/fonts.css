@@ -1,43 +1,24 @@
 @font-face {
-    font-family: "Manrope";
+    font-family: "Poppins";
     font-weight: 200;
-    src: url(../fonts/Manrope-ExtraLight.otf)
+    src: url(../fonts/Poppins/Poppins-ExtraLight.ttf);
 }
 
 @font-face {
-    font-family: "Manrope";
-    font-weight: 300;
-    src: url(../fonts/Manrope-Light.otf)
-}
-
-@font-face {
-    font-family: "Manrope";
+    font-family: "Poppins";
     font-weight: 400;
-    src: url(../fonts/Manrope-Regular.otf)
+    src: url(../fonts/Poppins/Poppins-Regular.ttf)
 }
 
 @font-face {
-    font-family: "Manrope";
-    font-weight: 500;
-    src: url(../fonts/Manrope-Medium.otf)
-}
-
-@font-face {
-    font-family: "Manrope";
-    font-weight: 600;
-    src: url(../fonts/Manrope-SemiBold.otf)
-}
-
-@font-face {
-    font-family: "Manrope";
+    font-family: "Poppins";
     font-weight: 700;
-    src: url(../fonts/Manrope-Bold.otf)
+    src: url(../fonts/Poppins/Poppins-Bold.ttf)
 }
 
 @font-face {
     font-family: "Manrope";
-    font-weight: 800;
-    src: url(../fonts/Manrope-ExtraBold.otf)
+    src: url(../fonts/Manrope[wght].ttf);
 }
 
 @font-face {
@@ -52,6 +33,11 @@
 }
 
 @font-face {
-    font-family: "Lemon Juice";
-    src: url(../fonts/lemon-juice.otf)
+    font-family: "BabaPro";
+    src: url(../fonts/BabaPro-Bold.ttf);
+}
+
+@font-face {
+    font-family: "IBM Plex Mono";
+    src: url(../fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf)
 }

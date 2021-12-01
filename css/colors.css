@@ -1,7 +1,8 @@
 :root {
-    --background: rgb(53, 255, 105);
-    --foreground: rgb(49, 49, 47);
-    --link: rgb(217, 3, 104);
-    --link-hover: rgb(255, 0, 127);
-    --ruler: rgba(217, 3, 104, 0.2);
+    --clr-fg-light: #ece4db;
+    --clr-bg-light: rgba(0,18,51,1);
+    --clr-bg-dark: rgb(0,8,20);
+    --clr-accent-light: #ffe66d;
+    --clr-accent-dark: #efa00b;
+    --clr-accent-alt: #E9BCB7;
 }
