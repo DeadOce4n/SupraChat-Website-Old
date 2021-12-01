@@ -33,7 +33,10 @@ body, h1, h2, h3, p {
     margin: 0;
 }
 
-p { padding: 0 0.5em 0 1em; }
+p {
+    padding: 0 0.3em 0 0.7em;
+    margin-bottom: 1em;
+}
 
 h1, h2, h3 {
     color: var(--clr-accent-light);
@@ -51,8 +54,6 @@ hr {
     border: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
-
-p { margin-bottom: 1em; }
 
 a {
     color: var(--clr-accent-light);
@@ -125,8 +126,7 @@ nav {
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 3rem;
-    font: 700 2rem "Bitter";
-    font-style: italic;
+    font: 700 2rem var(--ff-accent);
 }
 
 code {
@@ -173,12 +173,13 @@ pre code {
     width: 100%;
 }
 
-.is-active { display: inline; }
-.nav-end.is-active { display: block; }
+.nav-end.is-active, .nav-menu.is-active { display: block; }
 
 .nav-menu > ul {
     list-style-type: none;
     padding: 0;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -203,7 +204,7 @@ pre code {
 }
 
 .nav-end { display: none; }
-.nav-end > button { margin: 0 0 0.8em 0.8em; }
+.nav-end > button { margin: 0 0 1em 0.8em; }
 
 .nav-logo {
     font-family: "BabaPro";
@@ -222,7 +223,7 @@ pre code {
 .container.chat, .container.hero { width: min(90%, 120rem); }
 
 .container > ul {
-    padding-left: 0.5em;
+    padding-left: 1.5em;
 }
 
 .container li {
@@ -268,6 +269,7 @@ span.example {
     font-size: 6.4rem;
     font-weight: 700;
     color: var(--clr-accent-light);
+    margin-bottom: 3rem;
 }
 
 .hero p { font-family: var(--ff-primary); }
@@ -334,6 +336,9 @@ footer {
 
 @media (min-width: 60em) {
     :root { font-size: 10px; }
+    p {
+        padding: 0 0.5em 0 1em;
+    }
     .split {
         flex-direction: row;
         align-items: center;
@@ -350,7 +355,7 @@ footer {
         margin-inline: auto;
         width: 100%;
     }
-    .nav-bar > hr { display: none; }
+    .nav-bar  hr { display: none; }
     nav {
         flex-direction: row;
         align-items: center;
@@ -384,7 +389,7 @@ footer {
         margin-left: auto;
         display: block;
     }
-    .nav-end > button { margin-left: 0; }
+    .nav-end > button { margin: 0; }
     .container > ul {
         padding-left: 40px;
     }
